@@ -24,15 +24,15 @@ pipeline {
                 }
 
                 build job: 'deploy-to-production'
+            }
 
-                post {
-                    success {
-                        echo 'production deployment successfull'
-                    }
+            post {
+                success {
+                    echo 'production deployment successfull'
+                }
 
-                    failure {
-                        echo 'production deployment failed'
-                    }
+                failure {
+                    echo 'production deployment failed'
                 }
             }
         }
