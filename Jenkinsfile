@@ -6,9 +6,10 @@ pipeline {
                 sh 'mvn clean package'
             }
             post {
-                success:
+                success {
                     echo 'Archiving Artifacts'
                     archiveArtifacts artifacts: '**/target/*.war', followSymlinks: false
+                }                    
             }
         }
         stage ('Deploy to Staging') {
